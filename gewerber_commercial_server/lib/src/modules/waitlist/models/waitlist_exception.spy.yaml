@@ -1,0 +1,4 @@
+exception: WaitlistException
+fields:
+  message: String
+  field: String?

@@ -1,0 +1,6 @@
+enum: WaitlistStatus
+serialized: byName
+values:
+  - pending
+  - invited
+  - removed

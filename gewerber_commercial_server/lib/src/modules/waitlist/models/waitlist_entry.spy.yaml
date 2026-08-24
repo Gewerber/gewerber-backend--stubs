@@ -1,0 +1,14 @@
+class: WaitlistEntry
+table: commercial_waitlist_entry
+fields:
+  email: String, unique
+  locale: WaitlistLocale, default=de
+  source: WaitlistSource, default=website
+  referrer: String?
+  utmSource: String?
+  utmMedium: String?
+  utmCampaign: String?
+  businessType: String?
+  status: WaitlistStatus, default=pending
+  createdAt: DateTime, default=now
+  invitedAt: DateTime?

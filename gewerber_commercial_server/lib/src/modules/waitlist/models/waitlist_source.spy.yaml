@@ -1,0 +1,6 @@
+enum: WaitlistSource
+serialized: byName
+values:
+  - website
+  - app
+  - manual

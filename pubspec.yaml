@@ -1,0 +1,11 @@
+name: gewerber_commercial
+publish_to: none
+description: Public placeholder packages for the Gewerber commercial Serverpod module. Resolves dependencies for open-source builds; contains no business logic.
+version: 0.0.1
+
+environment:
+  sdk: '^3.12.0'
+
+workspace:
+  - gewerber_commercial_client
+  - gewerber_commercial_server

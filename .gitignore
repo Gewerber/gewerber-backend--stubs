@@ -1,0 +1,9 @@
+# Files and directories created by pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Pubspec overrides
+pubspec_overrides.yaml

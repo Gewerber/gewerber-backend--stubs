@@ -1,0 +1,11 @@
+class: JoinWaitlistRequest
+fields:
+  email: String
+  locale: WaitlistLocale, default=de
+  source: WaitlistSource, default=website
+  referrer: String?
+  utmSource: String?
+  utmMedium: String?
+  utmCampaign: String?
+  businessType: String?
+  honeypot: String?
