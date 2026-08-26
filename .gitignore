@@ -7,3 +7,6 @@ build/
 
 # Pubspec overrides
 pubspec_overrides.yaml
+
+# Dependency lockfiles are local-only (owner decision)
+pubspec.lock
