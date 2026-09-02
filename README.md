@@ -8,14 +8,14 @@ Serverpod module (nickname `commercial`).
 
 Serverpod embeds the clients of all modules listed in `generator.yaml` into the
 generated client SDK of a server. The open-source Gewerber backend therefore
-has a compile-time dependency on `gewerber_commercial_server` and
-`gewerber_commercial_client`. This repository provides public stand-in packages
+has a compile-time dependency on `gewerber_backend_commercial_server` and
+`gewerber_backend_commercial_client`. This repository provides public stand-in packages
 with identical names and API surface, so that **open-source builds work without
 access to the private repository**.
 
-- `gewerber_commercial_client` — full generated client (public API surface:
+- `gewerber_backend_commercial_client` — full generated client (public API surface:
   endpoint callers and serializable models).
-- `gewerber_commercial_server` — same models and endpoint signatures, but all
+- `gewerber_backend_commercial_server` — same models and endpoint signatures, but all
   endpoint method bodies throw `UnimplementedError`. Contains no business
   logic.
 
