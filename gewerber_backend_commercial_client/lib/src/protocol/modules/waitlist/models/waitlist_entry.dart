@@ -10,42 +10,43 @@
 // ignore_for_file: invalid_use_of_internal_member
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:serverpod_client/serverpod_client.dart' as _i1;
-import '../../../modules/waitlist/models/waitlist_locale.dart' as _i2;
-import '../../../modules/waitlist/models/waitlist_source.dart' as _i3;
-import '../../../modules/waitlist/models/waitlist_status.dart' as _i4;
+
+import 'package:serverpod_client/serverpod_client.dart' as _isc;
+import '../../../modules/waitlist/models/waitlist_locale.dart' as _imzvqjwd;
+import '../../../modules/waitlist/models/waitlist_source.dart' as _i4nloxkl;
+import '../../../modules/waitlist/models/waitlist_status.dart' as _ilsh1rjc;
 
 abstract class WaitlistEntry
-    implements _i1.SerializableModel, _i1.ProtocolSerialization {
+    implements _isc.SerializableModel, _isc.ProtocolSerialization {
   WaitlistEntry._({
     this.id,
     required this.email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     this.referrer,
     this.utmSource,
     this.utmMedium,
     this.utmCampaign,
     this.businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     this.invitedAt,
-  }) : locale = locale ?? _i2.WaitlistLocale.de,
-       source = source ?? _i3.WaitlistSource.website,
-       status = status ?? _i4.WaitlistStatus.pending,
+  }) : locale = locale ?? _imzvqjwd.WaitlistLocale.de,
+       source = source ?? _i4nloxkl.WaitlistSource.website,
+       status = status ?? _ilsh1rjc.WaitlistStatus.pending,
        createdAt = createdAt ?? DateTime.now();
 
   factory WaitlistEntry({
     int? id,
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   }) = _WaitlistEntryImpl;
@@ -56,12 +57,12 @@ abstract class WaitlistEntry
       email: jsonSerialization['email'] as String,
       locale: jsonSerialization['locale'] == null
           ? null
-          : _i2.WaitlistLocale.fromJson(
+          : _imzvqjwd.WaitlistLocale.fromJson(
               (jsonSerialization['locale'] as String),
             ),
       source: jsonSerialization['source'] == null
           ? null
-          : _i3.WaitlistSource.fromJson(
+          : _i4nloxkl.WaitlistSource.fromJson(
               (jsonSerialization['source'] as String),
             ),
       referrer: jsonSerialization['referrer'] as String?,
@@ -71,15 +72,15 @@ abstract class WaitlistEntry
       businessType: jsonSerialization['businessType'] as String?,
       status: jsonSerialization['status'] == null
           ? null
-          : _i4.WaitlistStatus.fromJson(
+          : _ilsh1rjc.WaitlistStatus.fromJson(
               (jsonSerialization['status'] as String),
             ),
       createdAt: jsonSerialization['createdAt'] == null
           ? null
-          : _i1.DateTimeJsonExtension.fromJson(jsonSerialization['createdAt']),
+          : _isc.DateTimeJsonExtension.fromJson(jsonSerialization['createdAt']),
       invitedAt: jsonSerialization['invitedAt'] == null
           ? null
-          : _i1.DateTimeJsonExtension.fromJson(jsonSerialization['invitedAt']),
+          : _isc.DateTimeJsonExtension.fromJson(jsonSerialization['invitedAt']),
     );
   }
 
@@ -90,9 +91,9 @@ abstract class WaitlistEntry
 
   String email;
 
-  _i2.WaitlistLocale locale;
+  _imzvqjwd.WaitlistLocale locale;
 
-  _i3.WaitlistSource source;
+  _i4nloxkl.WaitlistSource source;
 
   String? referrer;
 
@@ -104,7 +105,7 @@ abstract class WaitlistEntry
 
   String? businessType;
 
-  _i4.WaitlistStatus status;
+  _ilsh1rjc.WaitlistStatus status;
 
   DateTime createdAt;
 
@@ -112,25 +113,25 @@ abstract class WaitlistEntry
 
   /// Returns a shallow copy of this [WaitlistEntry]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_isc.useResult
   WaitlistEntry copyWith({
     int? id,
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   });
   @override
   Map<String, dynamic> toJson() {
     return {
-      '__className__': 'gewerber_commercial.WaitlistEntry',
+      '__className__': 'gewerber_backend_commercial.WaitlistEntry',
       if (id != null) 'id': id,
       'email': email,
       'locale': locale.toJson(),
@@ -149,7 +150,7 @@ abstract class WaitlistEntry
   @override
   Map<String, dynamic> toJsonForProtocol() {
     return {
-      '__className__': 'gewerber_commercial.WaitlistEntry',
+      '__className__': 'gewerber_backend_commercial.WaitlistEntry',
       if (id != null) 'id': id,
       'email': email,
       'locale': locale.toJson(),
@@ -167,7 +168,7 @@ abstract class WaitlistEntry
 
   @override
   String toString() {
-    return _i1.SerializationManager.encode(this);
+    return _isc.SerializationManager.encode(this);
   }
 }
 
@@ -177,14 +178,14 @@ class _WaitlistEntryImpl extends WaitlistEntry {
   _WaitlistEntryImpl({
     int? id,
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   }) : super._(
@@ -204,19 +205,19 @@ class _WaitlistEntryImpl extends WaitlistEntry {
 
   /// Returns a shallow copy of this [WaitlistEntry]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_isc.useResult
   @override
   WaitlistEntry copyWith({
     Object? id = _Undefined,
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     Object? referrer = _Undefined,
     Object? utmSource = _Undefined,
     Object? utmMedium = _Undefined,
     Object? utmCampaign = _Undefined,
     Object? businessType = _Undefined,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     Object? invitedAt = _Undefined,
   }) {

@@ -10,42 +10,43 @@
 // ignore_for_file: invalid_use_of_internal_member
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:serverpod/serverpod.dart' as _i1;
-import '../../../modules/waitlist/models/waitlist_locale.dart' as _i2;
-import '../../../modules/waitlist/models/waitlist_source.dart' as _i3;
-import '../../../modules/waitlist/models/waitlist_status.dart' as _i4;
+
+import 'package:serverpod/serverpod.dart' as _is;
+import '../../../modules/waitlist/models/waitlist_locale.dart' as _imzvqjwd;
+import '../../../modules/waitlist/models/waitlist_source.dart' as _i4nloxkl;
+import '../../../modules/waitlist/models/waitlist_status.dart' as _ilsh1rjc;
 
 abstract class WaitlistEntry
-    implements _i1.TableRow<int?>, _i1.ProtocolSerialization {
+    implements _is.TableRow<int?>, _is.ProtocolSerialization {
   WaitlistEntry._({
     this.id,
     required this.email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     this.referrer,
     this.utmSource,
     this.utmMedium,
     this.utmCampaign,
     this.businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     this.invitedAt,
-  }) : locale = locale ?? _i2.WaitlistLocale.de,
-       source = source ?? _i3.WaitlistSource.website,
-       status = status ?? _i4.WaitlistStatus.pending,
+  }) : locale = locale ?? _imzvqjwd.WaitlistLocale.de,
+       source = source ?? _i4nloxkl.WaitlistSource.website,
+       status = status ?? _ilsh1rjc.WaitlistStatus.pending,
        createdAt = createdAt ?? DateTime.now();
 
   factory WaitlistEntry({
     int? id,
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   }) = _WaitlistEntryImpl;
@@ -56,12 +57,12 @@ abstract class WaitlistEntry
       email: jsonSerialization['email'] as String,
       locale: jsonSerialization['locale'] == null
           ? null
-          : _i2.WaitlistLocale.fromJson(
+          : _imzvqjwd.WaitlistLocale.fromJson(
               (jsonSerialization['locale'] as String),
             ),
       source: jsonSerialization['source'] == null
           ? null
-          : _i3.WaitlistSource.fromJson(
+          : _i4nloxkl.WaitlistSource.fromJson(
               (jsonSerialization['source'] as String),
             ),
       referrer: jsonSerialization['referrer'] as String?,
@@ -71,15 +72,15 @@ abstract class WaitlistEntry
       businessType: jsonSerialization['businessType'] as String?,
       status: jsonSerialization['status'] == null
           ? null
-          : _i4.WaitlistStatus.fromJson(
+          : _ilsh1rjc.WaitlistStatus.fromJson(
               (jsonSerialization['status'] as String),
             ),
       createdAt: jsonSerialization['createdAt'] == null
           ? null
-          : _i1.DateTimeJsonExtension.fromJson(jsonSerialization['createdAt']),
+          : _is.DateTimeJsonExtension.fromJson(jsonSerialization['createdAt']),
       invitedAt: jsonSerialization['invitedAt'] == null
           ? null
-          : _i1.DateTimeJsonExtension.fromJson(jsonSerialization['invitedAt']),
+          : _is.DateTimeJsonExtension.fromJson(jsonSerialization['invitedAt']),
     );
   }
 
@@ -92,9 +93,9 @@ abstract class WaitlistEntry
 
   String email;
 
-  _i2.WaitlistLocale locale;
+  _imzvqjwd.WaitlistLocale locale;
 
-  _i3.WaitlistSource source;
+  _i4nloxkl.WaitlistSource source;
 
   String? referrer;
 
@@ -106,36 +107,36 @@ abstract class WaitlistEntry
 
   String? businessType;
 
-  _i4.WaitlistStatus status;
+  _ilsh1rjc.WaitlistStatus status;
 
   DateTime createdAt;
 
   DateTime? invitedAt;
 
   @override
-  _i1.Table<int?> get table => t;
+  _is.Table<int?> get table => t;
 
   /// Returns a shallow copy of this [WaitlistEntry]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_is.useResult
   WaitlistEntry copyWith({
     int? id,
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   });
   @override
   Map<String, dynamic> toJson() {
     return {
-      '__className__': 'gewerber_commercial.WaitlistEntry',
+      '__className__': 'gewerber_backend_commercial.WaitlistEntry',
       if (id != null) 'id': id,
       'email': email,
       'locale': locale.toJson(),
@@ -154,7 +155,7 @@ abstract class WaitlistEntry
   @override
   Map<String, dynamic> toJsonForProtocol() {
     return {
-      '__className__': 'gewerber_commercial.WaitlistEntry',
+      '__className__': 'gewerber_backend_commercial.WaitlistEntry',
       if (id != null) 'id': id,
       'email': email,
       'locale': locale.toJson(),
@@ -175,11 +176,11 @@ abstract class WaitlistEntry
   }
 
   static WaitlistEntryIncludeList includeList({
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? where,
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? where,
     int? limit,
     int? offset,
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
     WaitlistEntryInclude? include,
   }) {
     return WaitlistEntryIncludeList._(
@@ -194,7 +195,7 @@ abstract class WaitlistEntry
 
   @override
   String toString() {
-    return _i1.SerializationManager.encode(this);
+    return _is.SerializationManager.encode(this);
   }
 }
 
@@ -204,14 +205,14 @@ class _WaitlistEntryImpl extends WaitlistEntry {
   _WaitlistEntryImpl({
     int? id,
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
     String? utmCampaign,
     String? businessType,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     DateTime? invitedAt,
   }) : super._(
@@ -231,19 +232,19 @@ class _WaitlistEntryImpl extends WaitlistEntry {
 
   /// Returns a shallow copy of this [WaitlistEntry]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_is.useResult
   @override
   WaitlistEntry copyWith({
     Object? id = _Undefined,
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     Object? referrer = _Undefined,
     Object? utmSource = _Undefined,
     Object? utmMedium = _Undefined,
     Object? utmCampaign = _Undefined,
     Object? businessType = _Undefined,
-    _i4.WaitlistStatus? status,
+    _ilsh1rjc.WaitlistStatus? status,
     DateTime? createdAt,
     Object? invitedAt = _Undefined,
   }) {
@@ -264,126 +265,126 @@ class _WaitlistEntryImpl extends WaitlistEntry {
   }
 }
 
-class WaitlistEntryUpdateTable extends _i1.UpdateTable<WaitlistEntryTable> {
+class WaitlistEntryUpdateTable extends _is.UpdateTable<WaitlistEntryTable> {
   WaitlistEntryUpdateTable(super.table);
 
-  _i1.ColumnValue<String, String> email(String value) => _i1.ColumnValue(
+  _is.ColumnValue<String, String> email(String value) => _is.ColumnValue(
     table.email,
     value,
   );
 
-  _i1.ColumnValue<_i2.WaitlistLocale, _i2.WaitlistLocale> locale(
-    _i2.WaitlistLocale value,
-  ) => _i1.ColumnValue(
+  _is.ColumnValue<_imzvqjwd.WaitlistLocale, _imzvqjwd.WaitlistLocale> locale(
+    _imzvqjwd.WaitlistLocale value,
+  ) => _is.ColumnValue(
     table.locale,
     value,
   );
 
-  _i1.ColumnValue<_i3.WaitlistSource, _i3.WaitlistSource> source(
-    _i3.WaitlistSource value,
-  ) => _i1.ColumnValue(
+  _is.ColumnValue<_i4nloxkl.WaitlistSource, _i4nloxkl.WaitlistSource> source(
+    _i4nloxkl.WaitlistSource value,
+  ) => _is.ColumnValue(
     table.source,
     value,
   );
 
-  _i1.ColumnValue<String, String> referrer(String? value) => _i1.ColumnValue(
+  _is.ColumnValue<String, String> referrer(String? value) => _is.ColumnValue(
     table.referrer,
     value,
   );
 
-  _i1.ColumnValue<String, String> utmSource(String? value) => _i1.ColumnValue(
+  _is.ColumnValue<String, String> utmSource(String? value) => _is.ColumnValue(
     table.utmSource,
     value,
   );
 
-  _i1.ColumnValue<String, String> utmMedium(String? value) => _i1.ColumnValue(
+  _is.ColumnValue<String, String> utmMedium(String? value) => _is.ColumnValue(
     table.utmMedium,
     value,
   );
 
-  _i1.ColumnValue<String, String> utmCampaign(String? value) => _i1.ColumnValue(
+  _is.ColumnValue<String, String> utmCampaign(String? value) => _is.ColumnValue(
     table.utmCampaign,
     value,
   );
 
-  _i1.ColumnValue<String, String> businessType(String? value) =>
-      _i1.ColumnValue(
+  _is.ColumnValue<String, String> businessType(String? value) =>
+      _is.ColumnValue(
         table.businessType,
         value,
       );
 
-  _i1.ColumnValue<_i4.WaitlistStatus, _i4.WaitlistStatus> status(
-    _i4.WaitlistStatus value,
-  ) => _i1.ColumnValue(
+  _is.ColumnValue<_ilsh1rjc.WaitlistStatus, _ilsh1rjc.WaitlistStatus> status(
+    _ilsh1rjc.WaitlistStatus value,
+  ) => _is.ColumnValue(
     table.status,
     value,
   );
 
-  _i1.ColumnValue<DateTime, DateTime> createdAt(DateTime value) =>
-      _i1.ColumnValue(
+  _is.ColumnValue<DateTime, DateTime> createdAt(DateTime value) =>
+      _is.ColumnValue(
         table.createdAt,
         value,
       );
 
-  _i1.ColumnValue<DateTime, DateTime> invitedAt(DateTime? value) =>
-      _i1.ColumnValue(
+  _is.ColumnValue<DateTime, DateTime> invitedAt(DateTime? value) =>
+      _is.ColumnValue(
         table.invitedAt,
         value,
       );
 }
 
-class WaitlistEntryTable extends _i1.Table<int?> {
+class WaitlistEntryTable extends _is.Table<int?> {
   WaitlistEntryTable({super.tableRelation})
     : super(tableName: 'commercial_waitlist_entry') {
     updateTable = WaitlistEntryUpdateTable(this);
-    email = _i1.ColumnString(
+    email = _is.ColumnString(
       'email',
       this,
     );
-    locale = _i1.ColumnEnum(
+    locale = _is.ColumnEnum(
       'locale',
       this,
-      _i1.EnumSerialization.byName,
+      _is.EnumSerialization.byName,
       hasDefault: true,
     );
-    source = _i1.ColumnEnum(
+    source = _is.ColumnEnum(
       'source',
       this,
-      _i1.EnumSerialization.byName,
+      _is.EnumSerialization.byName,
       hasDefault: true,
     );
-    referrer = _i1.ColumnString(
+    referrer = _is.ColumnString(
       'referrer',
       this,
     );
-    utmSource = _i1.ColumnString(
+    utmSource = _is.ColumnString(
       'utmSource',
       this,
     );
-    utmMedium = _i1.ColumnString(
+    utmMedium = _is.ColumnString(
       'utmMedium',
       this,
     );
-    utmCampaign = _i1.ColumnString(
+    utmCampaign = _is.ColumnString(
       'utmCampaign',
       this,
     );
-    businessType = _i1.ColumnString(
+    businessType = _is.ColumnString(
       'businessType',
       this,
     );
-    status = _i1.ColumnEnum(
+    status = _is.ColumnEnum(
       'status',
       this,
-      _i1.EnumSerialization.byName,
+      _is.EnumSerialization.byName,
       hasDefault: true,
     );
-    createdAt = _i1.ColumnDateTime(
+    createdAt = _is.ColumnDateTime(
       'createdAt',
       this,
       hasDefault: true,
     );
-    invitedAt = _i1.ColumnDateTime(
+    invitedAt = _is.ColumnDateTime(
       'invitedAt',
       this,
     );
@@ -391,30 +392,30 @@ class WaitlistEntryTable extends _i1.Table<int?> {
 
   late final WaitlistEntryUpdateTable updateTable;
 
-  late final _i1.ColumnString email;
+  late final _is.ColumnString email;
 
-  late final _i1.ColumnEnum<_i2.WaitlistLocale> locale;
+  late final _is.ColumnEnum<_imzvqjwd.WaitlistLocale> locale;
 
-  late final _i1.ColumnEnum<_i3.WaitlistSource> source;
+  late final _is.ColumnEnum<_i4nloxkl.WaitlistSource> source;
 
-  late final _i1.ColumnString referrer;
+  late final _is.ColumnString referrer;
 
-  late final _i1.ColumnString utmSource;
+  late final _is.ColumnString utmSource;
 
-  late final _i1.ColumnString utmMedium;
+  late final _is.ColumnString utmMedium;
 
-  late final _i1.ColumnString utmCampaign;
+  late final _is.ColumnString utmCampaign;
 
-  late final _i1.ColumnString businessType;
+  late final _is.ColumnString businessType;
 
-  late final _i1.ColumnEnum<_i4.WaitlistStatus> status;
+  late final _is.ColumnEnum<_ilsh1rjc.WaitlistStatus> status;
 
-  late final _i1.ColumnDateTime createdAt;
+  late final _is.ColumnDateTime createdAt;
 
-  late final _i1.ColumnDateTime invitedAt;
+  late final _is.ColumnDateTime invitedAt;
 
   @override
-  List<_i1.Column> get columns => [
+  List<_is.Column> get columns => [
     id,
     email,
     locale,
@@ -430,19 +431,19 @@ class WaitlistEntryTable extends _i1.Table<int?> {
   ];
 }
 
-class WaitlistEntryInclude extends _i1.IncludeObject {
+class WaitlistEntryInclude extends _is.IncludeObject {
   WaitlistEntryInclude._();
 
   @override
-  Map<String, _i1.Include?> get includes => {};
+  Map<String, _is.Include?> get includes => {};
 
   @override
-  _i1.Table<int?> get table => WaitlistEntry.t;
+  _is.Table<int?> get table => WaitlistEntry.t;
 }
 
-class WaitlistEntryIncludeList extends _i1.IncludeList {
+class WaitlistEntryIncludeList extends _is.IncludeList {
   WaitlistEntryIncludeList._({
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? where,
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? where,
     super.limit,
     super.offset,
     super.orderBy,
@@ -453,10 +454,10 @@ class WaitlistEntryIncludeList extends _i1.IncludeList {
   }
 
   @override
-  Map<String, _i1.Include?> get includes => include?.includes ?? {};
+  Map<String, _is.Include?> get includes => include?.includes ?? {};
 
   @override
-  _i1.Table<int?> get table => WaitlistEntry.t;
+  _is.Table<int?> get table => WaitlistEntry.t;
 }
 
 class WaitlistEntryRepository {
@@ -485,15 +486,15 @@ class WaitlistEntryRepository {
   /// );
   /// ```
   Future<List<WaitlistEntry>> find(
-    _i1.DatabaseSession session, {
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? where,
+    _is.DatabaseSession session, {
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? where,
     int? limit,
     int? offset,
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
-    _i1.Transaction? transaction,
-    _i1.LockMode? lockMode,
-    _i1.LockBehavior? lockBehavior,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.Transaction? transaction,
+    _is.LockMode? lockMode,
+    _is.LockBehavior? lockBehavior,
   }) async {
     return session.db.find<WaitlistEntry>(
       where: where?.call(WaitlistEntry.t),
@@ -525,14 +526,14 @@ class WaitlistEntryRepository {
   /// );
   /// ```
   Future<WaitlistEntry?> findFirstRow(
-    _i1.DatabaseSession session, {
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? where,
+    _is.DatabaseSession session, {
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? where,
     int? offset,
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
-    _i1.Transaction? transaction,
-    _i1.LockMode? lockMode,
-    _i1.LockBehavior? lockBehavior,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.Transaction? transaction,
+    _is.LockMode? lockMode,
+    _is.LockBehavior? lockBehavior,
   }) async {
     return session.db.findFirstRow<WaitlistEntry>(
       where: where?.call(WaitlistEntry.t),
@@ -547,11 +548,11 @@ class WaitlistEntryRepository {
 
   /// Finds a single [WaitlistEntry] by its [id] or null if no such row exists.
   Future<WaitlistEntry?> findById(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     int id, {
-    _i1.Transaction? transaction,
-    _i1.LockMode? lockMode,
-    _i1.LockBehavior? lockBehavior,
+    _is.Transaction? transaction,
+    _is.LockMode? lockMode,
+    _is.LockBehavior? lockBehavior,
   }) async {
     return session.db.findById<WaitlistEntry>(
       id,
@@ -576,9 +577,9 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> insert(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     List<WaitlistEntry> rows, {
-    _i1.Transaction? transaction,
+    _is.Transaction? transaction,
     bool ignoreConflicts = false,
     bool noReturn = false,
   }) async {
@@ -594,9 +595,9 @@ class WaitlistEntryRepository {
   ///
   /// The returned [WaitlistEntry] will have its `id` field set.
   Future<WaitlistEntry> insertRow(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     WaitlistEntry row, {
-    _i1.Transaction? transaction,
+    _is.Transaction? transaction,
   }) async {
     return session.db.insertRow<WaitlistEntry>(
       row,
@@ -625,12 +626,12 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> upsert(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     List<WaitlistEntry> rows, {
-    required _i1.ColumnSelections<WaitlistEntryTable> conflictColumns,
-    _i1.ColumnSelections<WaitlistEntryTable>? updateColumns,
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? updateWhere,
-    _i1.Transaction? transaction,
+    required _is.ColumnSelections<WaitlistEntryTable> conflictColumns,
+    _is.ColumnSelections<WaitlistEntryTable>? updateColumns,
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? updateWhere,
+    _is.Transaction? transaction,
     bool noReturn = false,
   }) async {
     return session.db.upsert<WaitlistEntry>(
@@ -657,12 +658,12 @@ class WaitlistEntryRepository {
   ///
   /// The returned [WaitlistEntry] will have its `id` field set.
   Future<WaitlistEntry?> upsertRow(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     WaitlistEntry row, {
-    required _i1.ColumnSelections<WaitlistEntryTable> conflictColumns,
-    _i1.ColumnSelections<WaitlistEntryTable>? updateColumns,
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? updateWhere,
-    _i1.Transaction? transaction,
+    required _is.ColumnSelections<WaitlistEntryTable> conflictColumns,
+    _is.ColumnSelections<WaitlistEntryTable>? updateColumns,
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? updateWhere,
+    _is.Transaction? transaction,
   }) async {
     return session.db.upsertRow<WaitlistEntry>(
       row,
@@ -683,10 +684,10 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> update(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     List<WaitlistEntry> rows, {
-    _i1.ColumnSelections<WaitlistEntryTable>? columns,
-    _i1.Transaction? transaction,
+    _is.ColumnSelections<WaitlistEntryTable>? columns,
+    _is.Transaction? transaction,
     bool noReturn = false,
   }) async {
     return session.db.update<WaitlistEntry>(
@@ -701,10 +702,10 @@ class WaitlistEntryRepository {
   /// Optionally, a list of [columns] can be provided to only update those
   /// columns. Defaults to all columns.
   Future<WaitlistEntry> updateRow(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     WaitlistEntry row, {
-    _i1.ColumnSelections<WaitlistEntryTable>? columns,
-    _i1.Transaction? transaction,
+    _is.ColumnSelections<WaitlistEntryTable>? columns,
+    _is.Transaction? transaction,
   }) async {
     return session.db.updateRow<WaitlistEntry>(
       row,
@@ -716,10 +717,10 @@ class WaitlistEntryRepository {
   /// Updates a single [WaitlistEntry] by its [id] with the specified [columnValues].
   /// Returns the updated row or null if no row with the given id exists.
   Future<WaitlistEntry?> updateById(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     int id, {
-    required _i1.ColumnValueListBuilder<WaitlistEntryUpdateTable> columnValues,
-    _i1.Transaction? transaction,
+    required _is.ColumnValueListBuilder<WaitlistEntryUpdateTable> columnValues,
+    _is.Transaction? transaction,
   }) async {
     return session.db.updateById<WaitlistEntry>(
       id,
@@ -735,14 +736,14 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> updateWhere(
-    _i1.DatabaseSession session, {
-    required _i1.ColumnValueListBuilder<WaitlistEntryUpdateTable> columnValues,
-    required _i1.WhereExpressionBuilder<WaitlistEntryTable> where,
+    _is.DatabaseSession session, {
+    required _is.ColumnValueListBuilder<WaitlistEntryUpdateTable> columnValues,
+    required _is.WhereExpressionBuilder<WaitlistEntryTable> where,
     int? limit,
     int? offset,
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
-    _i1.Transaction? transaction,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.Transaction? transaction,
     bool noReturn = false,
   }) async {
     return session.db.updateWhere<WaitlistEntry>(
@@ -769,11 +770,11 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> delete(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     List<WaitlistEntry> rows, {
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
-    _i1.Transaction? transaction,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.Transaction? transaction,
     bool noReturn = false,
   }) async {
     return session.db.delete<WaitlistEntry>(
@@ -787,9 +788,9 @@ class WaitlistEntryRepository {
 
   /// Deletes a single [WaitlistEntry].
   Future<WaitlistEntry> deleteRow(
-    _i1.DatabaseSession session,
+    _is.DatabaseSession session,
     WaitlistEntry row, {
-    _i1.Transaction? transaction,
+    _is.Transaction? transaction,
   }) async {
     return session.db.deleteRow<WaitlistEntry>(
       row,
@@ -806,11 +807,11 @@ class WaitlistEntryRepository {
   /// the database and an empty list is returned. This avoids the overhead of
   /// transferring and deserializing the rows when the result is not needed.
   Future<List<WaitlistEntry>> deleteWhere(
-    _i1.DatabaseSession session, {
-    required _i1.WhereExpressionBuilder<WaitlistEntryTable> where,
-    _i1.OrderByBuilder<WaitlistEntryTable>? orderBy,
-    _i1.OrderByListBuilder<WaitlistEntryTable>? orderByList,
-    _i1.Transaction? transaction,
+    _is.DatabaseSession session, {
+    required _is.WhereExpressionBuilder<WaitlistEntryTable> where,
+    _is.OrderByBuilder<WaitlistEntryTable>? orderBy,
+    _is.OrderByListBuilder<WaitlistEntryTable>? orderByList,
+    _is.Transaction? transaction,
     bool noReturn = false,
   }) async {
     return session.db.deleteWhere<WaitlistEntry>(
@@ -825,10 +826,10 @@ class WaitlistEntryRepository {
   /// Counts the number of rows matching the [where] expression. If omitted,
   /// will return the count of all rows in the table.
   Future<int> count(
-    _i1.DatabaseSession session, {
-    _i1.WhereExpressionBuilder<WaitlistEntryTable>? where,
+    _is.DatabaseSession session, {
+    _is.WhereExpressionBuilder<WaitlistEntryTable>? where,
     int? limit,
-    _i1.Transaction? transaction,
+    _is.Transaction? transaction,
   }) async {
     return session.db.count<WaitlistEntry>(
       where: where?.call(WaitlistEntry.t),
@@ -839,11 +840,11 @@ class WaitlistEntryRepository {
 
   /// Acquires row-level locks on [WaitlistEntry] rows matching the [where] expression.
   Future<void> lockRows(
-    _i1.DatabaseSession session, {
-    required _i1.WhereExpressionBuilder<WaitlistEntryTable> where,
-    required _i1.LockMode lockMode,
-    required _i1.Transaction transaction,
-    _i1.LockBehavior lockBehavior = _i1.LockBehavior.wait,
+    _is.DatabaseSession session, {
+    required _is.WhereExpressionBuilder<WaitlistEntryTable> where,
+    required _is.LockMode lockMode,
+    required _is.Transaction transaction,
+    _is.LockBehavior lockBehavior = _is.LockBehavior.wait,
   }) async {
     return session.db.lockRows<WaitlistEntry>(
       where: where(WaitlistEntry.t),
