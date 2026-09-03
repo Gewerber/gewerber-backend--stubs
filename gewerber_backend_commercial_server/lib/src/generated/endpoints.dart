@@ -13,7 +13,7 @@
 import 'package:serverpod/serverpod.dart' as _i1;
 import '../endpoints/commercial_endpoint.dart' as _i2;
 import '../modules/waitlist/endpoints/waitlist_endpoint.dart' as _i3;
-import 'package:gewerber_commercial_server/src/generated/modules/waitlist/models/join_waitlist_request.dart'
+import 'package:gewerber_backend_commercial_server/src/generated/modules/waitlist/models/join_waitlist_request.dart'
     as _i4;
 
 class Endpoints extends _i1.EndpointDispatch {

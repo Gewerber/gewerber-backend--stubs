@@ -1,5 +1,5 @@
 type: module
 nickname: commercial
 
-client_package_path: ../gewerber_commercial_client
+client_package_path: ../gewerber_backend_commercial_client
 server_test_tools_path: test/integration/test_tools

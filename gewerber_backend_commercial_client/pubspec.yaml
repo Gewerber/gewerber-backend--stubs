@@ -1,8 +1,8 @@
-name: gewerber_commercial_client
+name: gewerber_backend_commercial_client
 description: Public stub of the Gewerber commercial client package (generated API surface only).
 version: 0.0.1
 publish_to: none
-repository: https://github.com/Gewerber/gewerber-backend--stubs
+repository: https://github.com/Gewerber/gewerber-backend-stubs
 
 environment:
   sdk: '^3.12.0'

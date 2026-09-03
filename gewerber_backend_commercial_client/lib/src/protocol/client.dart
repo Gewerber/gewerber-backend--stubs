@@ -12,7 +12,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
-import 'package:gewerber_commercial_client/src/protocol/modules/waitlist/models/join_waitlist_request.dart'
+import 'package:gewerber_backend_commercial_client/src/protocol/modules/waitlist/models/join_waitlist_request.dart'
     as _i3;
 
 /// {@category Endpoint}
