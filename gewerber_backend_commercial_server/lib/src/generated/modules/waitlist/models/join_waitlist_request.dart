@@ -10,29 +10,30 @@
 // ignore_for_file: invalid_use_of_internal_member
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:serverpod/serverpod.dart' as _i1;
-import '../../../modules/waitlist/models/waitlist_locale.dart' as _i2;
-import '../../../modules/waitlist/models/waitlist_source.dart' as _i3;
+
+import 'package:serverpod/serverpod.dart' as _is;
+import '../../../modules/waitlist/models/waitlist_locale.dart' as _imzvqjwd;
+import '../../../modules/waitlist/models/waitlist_source.dart' as _i4nloxkl;
 
 abstract class JoinWaitlistRequest
-    implements _i1.SerializableModel, _i1.ProtocolSerialization {
+    implements _is.SerializableModel, _is.ProtocolSerialization {
   JoinWaitlistRequest._({
     required this.email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     this.referrer,
     this.utmSource,
     this.utmMedium,
     this.utmCampaign,
     this.businessType,
     this.honeypot,
-  }) : locale = locale ?? _i2.WaitlistLocale.de,
-       source = source ?? _i3.WaitlistSource.website;
+  }) : locale = locale ?? _imzvqjwd.WaitlistLocale.de,
+       source = source ?? _i4nloxkl.WaitlistSource.website;
 
   factory JoinWaitlistRequest({
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
@@ -46,12 +47,12 @@ abstract class JoinWaitlistRequest
       email: jsonSerialization['email'] as String,
       locale: jsonSerialization['locale'] == null
           ? null
-          : _i2.WaitlistLocale.fromJson(
+          : _imzvqjwd.WaitlistLocale.fromJson(
               (jsonSerialization['locale'] as String),
             ),
       source: jsonSerialization['source'] == null
           ? null
-          : _i3.WaitlistSource.fromJson(
+          : _i4nloxkl.WaitlistSource.fromJson(
               (jsonSerialization['source'] as String),
             ),
       referrer: jsonSerialization['referrer'] as String?,
@@ -65,9 +66,9 @@ abstract class JoinWaitlistRequest
 
   String email;
 
-  _i2.WaitlistLocale locale;
+  _imzvqjwd.WaitlistLocale locale;
 
-  _i3.WaitlistSource source;
+  _i4nloxkl.WaitlistSource source;
 
   String? referrer;
 
@@ -83,11 +84,11 @@ abstract class JoinWaitlistRequest
 
   /// Returns a shallow copy of this [JoinWaitlistRequest]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_is.useResult
   JoinWaitlistRequest copyWith({
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
@@ -98,7 +99,7 @@ abstract class JoinWaitlistRequest
   @override
   Map<String, dynamic> toJson() {
     return {
-      '__className__': 'gewerber_commercial.JoinWaitlistRequest',
+      '__className__': 'gewerber_backend_commercial.JoinWaitlistRequest',
       'email': email,
       'locale': locale.toJson(),
       'source': source.toJson(),
@@ -114,7 +115,7 @@ abstract class JoinWaitlistRequest
   @override
   Map<String, dynamic> toJsonForProtocol() {
     return {
-      '__className__': 'gewerber_commercial.JoinWaitlistRequest',
+      '__className__': 'gewerber_backend_commercial.JoinWaitlistRequest',
       'email': email,
       'locale': locale.toJson(),
       'source': source.toJson(),
@@ -129,7 +130,7 @@ abstract class JoinWaitlistRequest
 
   @override
   String toString() {
-    return _i1.SerializationManager.encode(this);
+    return _is.SerializationManager.encode(this);
   }
 }
 
@@ -138,8 +139,8 @@ class _Undefined {}
 class _JoinWaitlistRequestImpl extends JoinWaitlistRequest {
   _JoinWaitlistRequestImpl({
     required String email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     String? referrer,
     String? utmSource,
     String? utmMedium,
@@ -160,12 +161,12 @@ class _JoinWaitlistRequestImpl extends JoinWaitlistRequest {
 
   /// Returns a shallow copy of this [JoinWaitlistRequest]
   /// with some or all fields replaced by the given arguments.
-  @_i1.useResult
+  @_is.useResult
   @override
   JoinWaitlistRequest copyWith({
     String? email,
-    _i2.WaitlistLocale? locale,
-    _i3.WaitlistSource? source,
+    _imzvqjwd.WaitlistLocale? locale,
+    _i4nloxkl.WaitlistSource? source,
     Object? referrer = _Undefined,
     Object? utmSource = _Undefined,
     Object? utmMedium = _Undefined,
