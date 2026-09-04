@@ -1,13 +1,13 @@
 {
   "__className__": "serverpod.DatabaseDefinition",
   "schemaVersion": 2,
-  "moduleName": "gewerber_backend_commercial",
+  "moduleName": "gewerber_commercial",
   "tables": [
     {
       "__className__": "serverpod.TableDefinition",
       "name": "commercial_waitlist_entry",
       "dartName": "WaitlistEntry",
-      "module": "gewerber_backend_commercial",
+      "module": "gewerber_commercial",
       "schema": "public",
       "columns": [
         {

@@ -1,7 +1,7 @@
 {
   "__className__": "serverpod.DatabaseDefinition",
   "schemaVersion": 2,
-  "moduleName": "gewerber_backend_commercial",
+  "moduleName": "gewerber_commercial",
   "tables": [
     {
       "__className__": "serverpod.TableDefinition",
@@ -1352,7 +1352,7 @@
   "installedModules": [
     {
       "__className__": "serverpod.DatabaseMigrationVersionModel",
-      "module": "gewerber_backend_commercial",
+      "module": "gewerber_commercial",
       "version": "20260814071640484"
     },
     {

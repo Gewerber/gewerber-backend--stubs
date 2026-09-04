@@ -1,7 +1,7 @@
 {
   "__className__": "serverpod.DatabaseDefinition",
   "schemaVersion": 2,
-  "moduleName": "gewerber_backend_commercial",
+  "moduleName": "gewerber_commercial",
   "tables": [],
   "installedModules": [
     {

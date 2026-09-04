@@ -2,7 +2,7 @@ name: gewerber_backend_commercial_server
 description: Public stub of the Gewerber commercial Serverpod module (dependency resolution only, no business logic).
 version: 0.0.1
 publish_to: none
-repository: https://github.com/Gewerber/gewerber-backend--stubs
+repository: https://github.com/Gewerber/gewerber-backend-stubs
 
 environment:
   sdk: '^3.12.0'

@@ -8,17 +8,17 @@
 // ignore_for_file: type_literal_in_constant_pattern
 // ignore_for_file: use_super_parameters
 // ignore_for_file: invalid_use_of_internal_member
-// ignore_for_file: dead_code, unnecessary_type_check
+// ignore_for_file: dead_code, no_leading_underscores_for_library_prefixes
+// ignore_for_file: unnecessary_type_check
 
-// ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:serverpod/serverpod.dart' as _i1;
-import 'package:serverpod/protocol.dart' as _i2;
-import 'modules/waitlist/models/join_waitlist_request.dart' as _i3;
-import 'modules/waitlist/models/waitlist_entry.dart' as _i4;
-import 'modules/waitlist/models/waitlist_exception.dart' as _i5;
-import 'modules/waitlist/models/waitlist_locale.dart' as _i6;
-import 'modules/waitlist/models/waitlist_source.dart' as _i7;
-import 'modules/waitlist/models/waitlist_status.dart' as _i8;
+import 'package:serverpod/protocol.dart' as _isp;
+import 'package:serverpod/serverpod.dart' as _is;
+import 'modules/waitlist/models/join_waitlist_request.dart' as _igv3k488;
+import 'modules/waitlist/models/waitlist_entry.dart' as _igdqkb2n;
+import 'modules/waitlist/models/waitlist_exception.dart' as _ibplyxx4;
+import 'modules/waitlist/models/waitlist_locale.dart' as _i4uj41vo;
+import 'modules/waitlist/models/waitlist_source.dart' as _i18l67d9;
+import 'modules/waitlist/models/waitlist_status.dart' as _ivebcceg;
 export 'modules/waitlist/models/join_waitlist_request.dart';
 export 'modules/waitlist/models/waitlist_entry.dart';
 export 'modules/waitlist/models/waitlist_exception.dart';
@@ -26,108 +26,108 @@ export 'modules/waitlist/models/waitlist_locale.dart';
 export 'modules/waitlist/models/waitlist_source.dart';
 export 'modules/waitlist/models/waitlist_status.dart';
 
-class Protocol extends _i1.DatabaseSerializationManager {
+class Protocol extends _is.DatabaseSerializationManager {
   Protocol._();
 
   factory Protocol() => _instance;
 
   static final Protocol _instance = Protocol._();
 
-  final Set<_i1.SerializationManager> _hostProtocols = {};
+  final Set<_is.SerializationManager> _hostProtocols = {};
 
-  static List<_i2.TableDefinition> get targetTableDefinitions => [
-    _i2.TableDefinition(
+  static List<_isp.TableDefinition> get targetTableDefinitions => [
+    _isp.TableDefinition(
       name: 'commercial_waitlist_entry',
       dartName: 'WaitlistEntry',
       schema: 'public',
       module: 'gewerber_backend_commercial',
       columns: [
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'id',
-          columnType: _i2.ColumnType.bigint,
+          columnType: _isp.ColumnType.bigint,
           isNullable: false,
           dartType: 'int?',
           columnDefault: 'serial',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'email',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: false,
           dartType: 'String',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'locale',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: false,
           dartType: 'protocol:WaitlistLocale',
           columnDefault: '\'de\'',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'source',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: false,
           dartType: 'protocol:WaitlistSource',
           columnDefault: '\'website\'',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'referrer',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: true,
           dartType: 'String?',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'utmSource',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: true,
           dartType: 'String?',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'utmMedium',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: true,
           dartType: 'String?',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'utmCampaign',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: true,
           dartType: 'String?',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'businessType',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: true,
           dartType: 'String?',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'status',
-          columnType: _i2.ColumnType.text,
+          columnType: _isp.ColumnType.text,
           isNullable: false,
           dartType: 'protocol:WaitlistStatus',
           columnDefault: '\'pending\'',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'createdAt',
-          columnType: _i2.ColumnType.timestampWithoutTimeZone,
+          columnType: _isp.ColumnType.timestampWithoutTimeZone,
           isNullable: false,
           dartType: 'DateTime',
           columnDefault: 'now',
         ),
-        _i2.ColumnDefinition(
+        _isp.ColumnDefinition(
           name: 'invitedAt',
-          columnType: _i2.ColumnType.timestampWithoutTimeZone,
+          columnType: _isp.ColumnType.timestampWithoutTimeZone,
           isNullable: true,
           dartType: 'DateTime?',
         ),
       ],
       foreignKeys: [],
       indexes: [
-        _i2.IndexDefinition(
+        _isp.IndexDefinition(
           indexName: 'commercial_waitlist_entry__email__unique_idx',
           tableSpace: null,
           elements: [
-            _i2.IndexElementDefinition(
-              type: _i2.IndexElementDefinitionType.column,
+            _isp.IndexElementDefinition(
+              type: _isp.IndexElementDefinitionType.column,
               definition: 'email',
             ),
           ],
@@ -142,7 +142,7 @@ class Protocol extends _i1.DatabaseSerializationManager {
 
   void registerHostProtocol(
     String projectName,
-    _i1.SerializationManager protocol,
+    _is.SerializationManager protocol,
   ) {
     _hostProtocols.add(protocol);
   }
@@ -152,7 +152,7 @@ class Protocol extends _i1.DatabaseSerializationManager {
     final className = data['__className__'] as String?;
     if (className == null) return null;
     if (!className.startsWith('gewerber_backend_commercial.')) return className;
-    return className.substring(20);
+    return className.substring(28);
   }
 
   @override
@@ -176,57 +176,64 @@ class Protocol extends _i1.DatabaseSerializationManager {
       }
     }
 
-    if (t == _i3.JoinWaitlistRequest) {
-      return _i3.JoinWaitlistRequest.fromJson(data) as T;
+    if (t == _igv3k488.JoinWaitlistRequest) {
+      return _igv3k488.JoinWaitlistRequest.fromJson(data) as T;
     }
-    if (t == _i4.WaitlistEntry) {
-      return _i4.WaitlistEntry.fromJson(data) as T;
+    if (t == _igdqkb2n.WaitlistEntry) {
+      return _igdqkb2n.WaitlistEntry.fromJson(data) as T;
     }
-    if (t == _i5.WaitlistException) {
-      return _i5.WaitlistException.fromJson(data) as T;
+    if (t == _ibplyxx4.WaitlistException) {
+      return _ibplyxx4.WaitlistException.fromJson(data) as T;
     }
-    if (t == _i6.WaitlistLocale) {
-      return _i6.WaitlistLocale.fromJson(data) as T;
+    if (t == _i4uj41vo.WaitlistLocale) {
+      return _i4uj41vo.WaitlistLocale.fromJson(data) as T;
     }
-    if (t == _i7.WaitlistSource) {
-      return _i7.WaitlistSource.fromJson(data) as T;
+    if (t == _i18l67d9.WaitlistSource) {
+      return _i18l67d9.WaitlistSource.fromJson(data) as T;
     }
-    if (t == _i8.WaitlistStatus) {
-      return _i8.WaitlistStatus.fromJson(data) as T;
+    if (t == _ivebcceg.WaitlistStatus) {
+      return _ivebcceg.WaitlistStatus.fromJson(data) as T;
     }
-    if (t == _i1.getType<_i3.JoinWaitlistRequest?>()) {
-      return (data != null ? _i3.JoinWaitlistRequest.fromJson(data) : null)
+    if (t == _is.getType<_igv3k488.JoinWaitlistRequest?>()) {
+      return (data != null
+              ? _igv3k488.JoinWaitlistRequest.fromJson(data)
+              : null)
           as T;
     }
-    if (t == _i1.getType<_i4.WaitlistEntry?>()) {
-      return (data != null ? _i4.WaitlistEntry.fromJson(data) : null) as T;
+    if (t == _is.getType<_igdqkb2n.WaitlistEntry?>()) {
+      return (data != null ? _igdqkb2n.WaitlistEntry.fromJson(data) : null)
+          as T;
     }
-    if (t == _i1.getType<_i5.WaitlistException?>()) {
-      return (data != null ? _i5.WaitlistException.fromJson(data) : null) as T;
+    if (t == _is.getType<_ibplyxx4.WaitlistException?>()) {
+      return (data != null ? _ibplyxx4.WaitlistException.fromJson(data) : null)
+          as T;
     }
-    if (t == _i1.getType<_i6.WaitlistLocale?>()) {
-      return (data != null ? _i6.WaitlistLocale.fromJson(data) : null) as T;
+    if (t == _is.getType<_i4uj41vo.WaitlistLocale?>()) {
+      return (data != null ? _i4uj41vo.WaitlistLocale.fromJson(data) : null)
+          as T;
     }
-    if (t == _i1.getType<_i7.WaitlistSource?>()) {
-      return (data != null ? _i7.WaitlistSource.fromJson(data) : null) as T;
+    if (t == _is.getType<_i18l67d9.WaitlistSource?>()) {
+      return (data != null ? _i18l67d9.WaitlistSource.fromJson(data) : null)
+          as T;
     }
-    if (t == _i1.getType<_i8.WaitlistStatus?>()) {
-      return (data != null ? _i8.WaitlistStatus.fromJson(data) : null) as T;
+    if (t == _is.getType<_ivebcceg.WaitlistStatus?>()) {
+      return (data != null ? _ivebcceg.WaitlistStatus.fromJson(data) : null)
+          as T;
     }
     try {
-      return _i2.Protocol().deserialize<T>(data, t);
-    } on _i1.DeserializationTypeNotFoundException catch (_) {}
+      return _isp.Protocol().deserialize<T>(data, t);
+    } on _is.DeserializationTypeNotFoundException catch (_) {}
     return super.deserialize<T>(data, t);
   }
 
   static String? getClassNameForType(Type type) {
     return switch (type) {
-      _i3.JoinWaitlistRequest => 'JoinWaitlistRequest',
-      _i4.WaitlistEntry => 'WaitlistEntry',
-      _i5.WaitlistException => 'WaitlistException',
-      _i6.WaitlistLocale => 'WaitlistLocale',
-      _i7.WaitlistSource => 'WaitlistSource',
-      _i8.WaitlistStatus => 'WaitlistStatus',
+      _igv3k488.JoinWaitlistRequest => 'JoinWaitlistRequest',
+      _igdqkb2n.WaitlistEntry => 'WaitlistEntry',
+      _ibplyxx4.WaitlistException => 'WaitlistException',
+      _i4uj41vo.WaitlistLocale => 'WaitlistLocale',
+      _i18l67d9.WaitlistSource => 'WaitlistSource',
+      _ivebcceg.WaitlistStatus => 'WaitlistStatus',
       _ => null,
     };
   }
@@ -244,20 +251,20 @@ class Protocol extends _i1.DatabaseSerializationManager {
     }
 
     switch (data) {
-      case _i3.JoinWaitlistRequest():
+      case _igv3k488.JoinWaitlistRequest():
         return 'JoinWaitlistRequest';
-      case _i4.WaitlistEntry():
+      case _igdqkb2n.WaitlistEntry():
         return 'WaitlistEntry';
-      case _i5.WaitlistException():
+      case _ibplyxx4.WaitlistException():
         return 'WaitlistException';
-      case _i6.WaitlistLocale():
+      case _i4uj41vo.WaitlistLocale():
         return 'WaitlistLocale';
-      case _i7.WaitlistSource():
+      case _i18l67d9.WaitlistSource():
         return 'WaitlistSource';
-      case _i8.WaitlistStatus():
+      case _ivebcceg.WaitlistStatus():
         return 'WaitlistStatus';
     }
-    className = _i2.Protocol().getClassNameForObject(data);
+    className = _isp.Protocol().getClassNameForObject(data);
     if (className != null) {
       return className.contains('.') ? className : 'serverpod.$className';
     }
@@ -271,26 +278,26 @@ class Protocol extends _i1.DatabaseSerializationManager {
       return super.deserializeByClassName(data);
     }
     if (dataClassName == 'JoinWaitlistRequest') {
-      return deserialize<_i3.JoinWaitlistRequest>(data['data']);
+      return deserialize<_igv3k488.JoinWaitlistRequest>(data['data']);
     }
     if (dataClassName == 'WaitlistEntry') {
-      return deserialize<_i4.WaitlistEntry>(data['data']);
+      return deserialize<_igdqkb2n.WaitlistEntry>(data['data']);
     }
     if (dataClassName == 'WaitlistException') {
-      return deserialize<_i5.WaitlistException>(data['data']);
+      return deserialize<_ibplyxx4.WaitlistException>(data['data']);
     }
     if (dataClassName == 'WaitlistLocale') {
-      return deserialize<_i6.WaitlistLocale>(data['data']);
+      return deserialize<_i4uj41vo.WaitlistLocale>(data['data']);
     }
     if (dataClassName == 'WaitlistSource') {
-      return deserialize<_i7.WaitlistSource>(data['data']);
+      return deserialize<_i18l67d9.WaitlistSource>(data['data']);
     }
     if (dataClassName == 'WaitlistStatus') {
-      return deserialize<_i8.WaitlistStatus>(data['data']);
+      return deserialize<_ivebcceg.WaitlistStatus>(data['data']);
     }
     if (dataClassName.startsWith('serverpod.')) {
       data['className'] = dataClassName.substring(10);
-      return _i2.Protocol().deserializeByClassName(data);
+      return _isp.Protocol().deserializeByClassName(data);
     }
     return super.deserializeByClassName(data);
   }
@@ -313,8 +320,8 @@ class Protocol extends _i1.DatabaseSerializationManager {
         'data': object,
       };
       return forProtocol
-          ? _i1.SerializationManager.toEncodableForProtocol(wrapped)
-          : _i1.SerializationManager.toEncodable(wrapped);
+          ? _is.SerializationManager.toEncodableForProtocol(wrapped)
+          : _is.SerializationManager.toEncodable(wrapped);
     }
     return super.dynamicFieldToJson(object, forProtocol: forProtocol);
   }
@@ -355,22 +362,22 @@ class Protocol extends _i1.DatabaseSerializationManager {
   }
 
   @override
-  _i1.Table? getTableForType(Type t) {
+  _is.Table? getTableForType(Type t) {
     {
-      var table = _i2.Protocol().getTableForType(t);
+      var table = _isp.Protocol().getTableForType(t);
       if (table != null) {
         return table;
       }
     }
     switch (t) {
-      case _i4.WaitlistEntry:
-        return _i4.WaitlistEntry.t;
+      case _igdqkb2n.WaitlistEntry:
+        return _igdqkb2n.WaitlistEntry.t;
     }
     return null;
   }
 
   @override
-  List<_i2.TableDefinition> getTargetTableDefinitions() =>
+  List<_isp.TableDefinition> getTargetTableDefinitions() =>
       targetTableDefinitions;
 
   @override
@@ -386,7 +393,7 @@ class Protocol extends _i1.DatabaseSerializationManager {
       return null;
     }
     try {
-      return _i2.Protocol().mapRecordToJson(record);
+      return _isp.Protocol().mapRecordToJson(record);
     } catch (_) {}
     throw Exception('Unsupported record type ${record.runtimeType}');
   }

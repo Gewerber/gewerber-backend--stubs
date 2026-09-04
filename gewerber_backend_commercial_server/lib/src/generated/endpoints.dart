@@ -10,66 +10,69 @@
 // ignore_for_file: invalid_use_of_internal_member
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:serverpod/serverpod.dart' as _i1;
-import '../endpoints/commercial_endpoint.dart' as _i2;
-import '../modules/waitlist/endpoints/waitlist_endpoint.dart' as _i3;
-import 'package:gewerber_backend_commercial_server/src/generated/modules/waitlist/models/join_waitlist_request.dart'
-    as _i4;
 
-class Endpoints extends _i1.EndpointDispatch {
+import 'package:gewerber_backend_commercial_server/src/generated/modules/waitlist/models/join_waitlist_request.dart'
+    as _iiut8fxl;
+import 'package:serverpod/serverpod.dart' as _is;
+import '../endpoints/commercial_endpoint.dart' as _iel4lhgm;
+import '../modules/waitlist/endpoints/waitlist_endpoint.dart' as _im6fuw82;
+
+class Endpoints extends _is.EndpointDispatch {
   @override
-  void initializeEndpoints(_i1.Server server) {
-    var endpoints = <String, _i1.Endpoint>{
-      'commercial': _i2.CommercialEndpoint()
+  void initializeEndpoints(_is.Server server) {
+    var endpoints = <String, _is.Endpoint>{
+      'commercial': _iel4lhgm.CommercialEndpoint()
         ..initialize(
           server,
           'commercial',
           'gewerber_backend_commercial',
         ),
-      'waitlist': _i3.WaitlistEndpoint()
+      'waitlist': _im6fuw82.WaitlistEndpoint()
         ..initialize(
           server,
           'waitlist',
           'gewerber_backend_commercial',
         ),
     };
-    connectors['commercial'] = _i1.EndpointConnector(
+    connectors['commercial'] = _is.EndpointConnector(
       name: 'commercial',
       endpoint: endpoints['commercial']!,
       methodConnectors: {
-        'status': _i1.MethodConnector(
+        'status': _is.MethodConnector(
           name: 'status',
           params: {},
           call:
               (
-                _i1.Session session,
+                _is.Session session,
                 Map<String, dynamic> params,
-              ) async => (endpoints['commercial'] as _i2.CommercialEndpoint)
-                  .status(session),
+              ) async =>
+                  (endpoints['commercial'] as _iel4lhgm.CommercialEndpoint)
+                      .status(session),
         ),
       },
     );
-    connectors['waitlist'] = _i1.EndpointConnector(
+    connectors['waitlist'] = _is.EndpointConnector(
       name: 'waitlist',
       endpoint: endpoints['waitlist']!,
       methodConnectors: {
-        'join': _i1.MethodConnector(
+        'join': _is.MethodConnector(
           name: 'join',
           params: {
-            'request': _i1.ParameterDescription(
+            'request': _is.ParameterDescription(
               name: 'request',
-              type: _i1.getType<_i4.JoinWaitlistRequest>(),
+              type: _is.getType<_iiut8fxl.JoinWaitlistRequest>(),
               nullable: false,
             ),
           },
           call:
               (
-                _i1.Session session,
+                _is.Session session,
                 Map<String, dynamic> params,
-              ) async => (endpoints['waitlist'] as _i3.WaitlistEndpoint).join(
-                session,
-                params['request'],
-              ),
+              ) async =>
+                  (endpoints['waitlist'] as _im6fuw82.WaitlistEndpoint).join(
+                    session,
+                    params['request'],
+                  ),
         ),
       },
     );

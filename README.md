@@ -1,4 +1,4 @@
-# gewerber-backend--stubs
+# gewerber-backend-stubs
 
 Public placeholder packages for the closed-source
 [`gewerber-backend-commercial`](https://github.com/Gewerber/gewerber-backend-commercial)

@@ -8,7 +8,7 @@
         "__className__": "serverpod.TableDefinition",
         "name": "commercial_waitlist_entry",
         "dartName": "WaitlistEntry",
-        "module": "gewerber_backend_commercial",
+        "module": "gewerber_commercial",
         "schema": "public",
         "columns": [
           {
